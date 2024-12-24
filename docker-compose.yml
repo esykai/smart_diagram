@@ -1,0 +1,16 @@
+services:
+  api:
+    build: ./diagram-engine
+    environment:
+      HOST: 0.0.0.0
+      PORT: 8000
+    ports:
+      - "8000:8000"
+
+  bot:
+    build: ./diagram-bot
+    environment:
+      TELEGRAM_API_TOKEN: your_token
+      API_URL: http://api:8000/generate_flowchart/
+    depends_on:
+      - api

@@ -1,0 +1,5 @@
+fastapi
+uvicorn
+graphviz
+python-tgpt
+colorlog
